@@ -11,16 +11,17 @@ class Funcionario {
     if (salario < 0) throw new Error('O salário deve ser um valor positivo')
   }
 
-  salarioLiquido() {
-    const TAXA_DESCONTO = 0.07
-    const valorDescontado = this.salario * TAXA_DESCONTO
-    const salarioLiquido = this.salario - valorDescontado
+  public salarioLiquido(descontos: number, beneficios: number) {
+    // const TAXA_DESCONTO = 0.07
+    // const valorDescontado = this.salario * TAXA_DESCONTO
+    // const salarioLiquido = this.salario - valorDescontado
+    const salarioLiquido = this.salario - descontos + beneficios
     return salarioLiquido
   }
 }
 
 const meuFuncionario = new Funcionario('Willame', 2000, 'Aluno')
 
-console.log('Informações do funcionário')
-console.log('Nome: ', meuFuncionario.nome)
-console.log('Salário líquido: ', meuFuncionario.salarioLiquido())
+console.log('nome do funcionário: ', meuFuncionario.nome)
+console.log('salário bruto: ', meuFuncionario.salario)
+console.log('salário líquido: ', meuFuncionario.salarioLiquido(200, 100))

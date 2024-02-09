@@ -9,14 +9,16 @@ class ContaBancaria {
     this.saldoConta = saldoConta
   }
 
-  depositar(value: number) {
-    if (value < 0) throw new Error('É necessário inserir um valor positivo')
+  public depositar(value: number) {
+    if (value < 0)
+      throw new Error('O valor a ser depositado não pode ser negativo.')
     this.saldoConta += value
     return
   }
 
-  sacar(value: number) {
-    if (value < 0) throw new Error('É necessário inserir um valor positivo')
+  public sacar(value: number) {
+    if (value < 0)
+      throw new Error('O valor a ser sacado não pode ser negativo.')
     this.saldoConta -= value
     return
   }
@@ -24,8 +26,10 @@ class ContaBancaria {
 
 const minhaConta = new ContaBancaria('1234', 'Willame M.', 850.0)
 
+console.log('nome do cliente: ', minhaConta.nomeTitular)
+console.log('n° da conta: ', minhaConta.numeroConta)
 console.log('meu saldo inicial: ', minhaConta.saldoConta)
-minhaConta.depositar(-200)
+minhaConta.depositar(200)
 console.log('meu saldo após depósito: ', minhaConta.saldoConta)
 minhaConta.sacar(150)
 console.log('meu saldo após saque: ', minhaConta.saldoConta)

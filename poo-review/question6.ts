@@ -13,16 +13,14 @@ class Produto {
       throw new Error('A quantidade de produtos deve ser um valor positivo')
   }
 
-  calcularValorTotalEmEstoque() {
+  public calcularValorTotalEmEstoque() {
     const valorTotal = this.preco * this.qtdEstoque
 
     return valorTotal
   }
 
-  verificarSeProdutoEstaDisponivel() {
-    if (this.qtdEstoque > 0) {
-      return true
-    }
+  public verificarSeProdutoEstaDisponivel() {
+    if (this.qtdEstoque > 0) return true
 
     return false
   }
@@ -30,10 +28,9 @@ class Produto {
 
 const meuProduto = new Produto('Arroz', 20, 0)
 
-console.log('Informações do produto')
-console.log('Nome: ', meuProduto.nome)
+console.log('nome do produto: ', meuProduto.nome)
 console.log(
-  'Valor total em estoque: ',
+  'valor total em estoque: ',
   meuProduto.calcularValorTotalEmEstoque()
 )
-console.log('Está disponível: ', meuProduto.verificarSeProdutoEstaDisponivel())
+console.log('está disponível: ', meuProduto.verificarSeProdutoEstaDisponivel())

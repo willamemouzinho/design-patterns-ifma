@@ -9,12 +9,12 @@ class Retangulo {
       )
   }
 
-  area() {
+  public area() {
     const area = this.altura * this.largura
     return area
   }
 
-  perimetro() {
+  public perimetro() {
     const perimetro = 2 * this.altura + 2 * this.largura
     return perimetro
   }
@@ -22,7 +22,7 @@ class Retangulo {
 
 const meuRetangulo = new Retangulo(10, 2)
 
-console.log('Altura do retângulo: ', meuRetangulo.altura)
-console.log('Largura do retângulo: ', meuRetangulo.largura)
-console.log('Área: ', meuRetangulo.area())
-console.log('Perímetro: ', meuRetangulo.perimetro())
+console.log('altura do retângulo: ', meuRetangulo.altura)
+console.log('largura do retângulo: ', meuRetangulo.largura)
+console.log('área: ', meuRetangulo.area())
+console.log('perímetro: ', meuRetangulo.perimetro())

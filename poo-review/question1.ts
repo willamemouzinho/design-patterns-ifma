@@ -6,12 +6,12 @@ class Circle {
       throw new Error('O raio precisa ser um número positivo')
   }
 
-  calculateArea() {
+  public calculateArea() {
     const areaCircle = (Math.PI * Math.pow(this.radius, 2)).toFixed(2)
     return areaCircle
   }
 
-  calculatePerimeter() {
+  public calculatePerimeter() {
     const perimeterCircle = (2 * Math.PI * this.radius).toFixed(2)
     return perimeterCircle
   }

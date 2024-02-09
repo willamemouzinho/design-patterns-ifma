@@ -14,13 +14,13 @@ class Aluno {
     })
   }
 
-  media() {
+  public media() {
     const media =
       this.notas.reduce((acc, nota) => acc + nota, 0) / this.notas.length
     return media
   }
 
-  verificarAprovacao() {
+  public verificarAprovacao() {
     const media = this.media()
     const situacao = media >= 7 ? 'Aprovado' : 'Reprovado'
     return situacao
@@ -29,8 +29,7 @@ class Aluno {
 
 const meuAluno = new Aluno('Willame', '20211BCC0-007', [10, 0, 10, 10, 12])
 
-console.log('Informações do aluno')
-console.log('Nome: ', meuAluno.nome)
-console.log('Matricula: ', meuAluno.matricula)
-console.log('Média: ', meuAluno.media())
-console.log('Situação: ', meuAluno.verificarAprovacao())
+console.log('nome do aluno: ', meuAluno.nome)
+console.log('matricula: ', meuAluno.matricula)
+console.log('média: ', meuAluno.media())
+console.log('situação: ', meuAluno.verificarAprovacao())
