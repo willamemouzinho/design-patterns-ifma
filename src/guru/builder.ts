@@ -87,7 +87,7 @@ class Product1 {
  * optional, since the client can control builders directly.
  */
 class Director {
-	private builder: Builder
+	private builder: Builder | null = null
 
 	/**
 	 * The Director works with any builder instance that the client code passes
@@ -103,13 +103,13 @@ class Director {
 	 * building steps.
 	 */
 	public buildMinimalViableProduct(): void {
-		this.builder.producePartA()
+		this.builder?.producePartA()
 	}
 
 	public buildFullFeaturedProduct(): void {
-		this.builder.producePartA()
-		this.builder.producePartB()
-		this.builder.producePartC()
+		this.builder?.producePartA()
+		this.builder?.producePartB()
+		this.builder?.producePartC()
 	}
 }
 
